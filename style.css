@@ -8,7 +8,7 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
-/*!End of FontsAB*/
+/*!End of Fonts*/
 
 
 body{
@@ -16,10 +16,24 @@ body{
     background-color: #E5E5E5;
 }
 .hidden{
-    display: hidden;
+    display: none;
 }
 .selected{
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.blur{
+    width: 100%;
+    height: calc(100% - 92px);
+    background-color: rgba(255,255,255,0.8);
+    z-index: 4;
+    position: fixed;
+    left: 0;
+    top: 92px;
 }
 
 
@@ -37,6 +51,7 @@ body{
     flex-direction: column;
     justify-content: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 3;
 }
 .header > :first-child{
     font-size: 44px;
@@ -55,7 +70,7 @@ body{
     padding-top: 0.1px;
     padding-left: 19px;
     height: 100%;
-    margin-bottom: 108px;
+    margin-bottom: 140px;
 }
 .menu{
     margin-top: 27px;
@@ -69,7 +84,6 @@ body{
 .options-bar{
     overflow-x: scroll;
     overflow-y: hidden;
-    height: 202px;
     display: flex;
     width: 100%;
     flex-wrap: nowrap;
@@ -81,6 +95,8 @@ body{
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 img{
     width: 144px;
@@ -94,22 +110,21 @@ img{
     font-size: 16px;
     font-weight: 700;
     color: #333333;
-    margin-left: 14px;
-    margin-bottom: 4px;
+    margin: 0 14px 4px 11px;
 }
 .option p{
     font-size: 15px;
     font-weight: 300;
     color: #A6A6A6;
-    margin-left: 14px;
-    margin-bottom: 5px;
+    margin: 0 14px 40px 11px;
 }
 .option h2{
     font-size: 16px;
     font-weight: 400;
     color: #000000;
-    margin-left: 14px;
-    margin-bottom: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
 }
 /*!End of Feed*/
 
@@ -121,10 +136,11 @@ img{
     left: 0;
     height: 92px;
     background-color: white;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 }
 .orderButton{
     background: #CBCBCB;
@@ -136,3 +152,57 @@ img{
     color: white;
 }
 /*!End of Bottom Menu*/
+
+
+/*!Confirm Menu*/
+.confirm-menu{
+    position: fixed;
+    width: 377px;
+    height: 370px;
+    left: calc((100% - 377px)/2);
+    top: calc(50% - 370px/2);
+    background: #50d074;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    z-index: 5;
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+    overflow: hidden;
+}
+.confirmButton{
+    width: 329px;
+    height: 52px;
+    line-height: 52px;
+    background: white;
+    border-radius: 100px;
+    color: #50D074;
+    border: none;
+    font-size: inherit;
+    font-weight: inherit;
+}
+.cancelButton{
+    width: 333px;
+    height: 52px;
+    line-height: 52px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: inherit;
+    font-weight: inherit;
+}
+.confirm-menu div{
+    font-weight: 400;
+    width: 327px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+.confirm-menu h1{
+    margin-top: 20px;
+    margin-bottom: 28px;
+}
+.confirm-menu > div:last-of-type{
+    font-weight: 700;
+    margin-bottom: 24px;
+}

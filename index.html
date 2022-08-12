@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
+
 <body>
+    <div class="blur hidden"></div>
+
+
     <div class="header">
         <h1 class="righteous">DrivenEats</h1>
         <p>sua comida em 6 minutos</p>
     </div>
+
+
     <div class="feed">
-        <div class="menu">
+        <div class="menu dishes">
             <div class="menu-title righteous">Primeiro, seu prato</div>
             <div class="options-bar">
                 <div class="option frango-yin-yang">
@@ -26,35 +33,112 @@
                 <div class="option frango-xadrez">
                     <img src="https://plazaonline.com.br/plazashopping/2021/03/Executivo-Frango-Xadrez-Prime.jpg">
                     <h1>Frango Xadrez Exec</h1>
-                    <p>Prato executivo, com batata e frango xadrez</p>
+                    <p>Batata, salada e frango xadrez</p>
                     <h2>R$ 16,90</h2>
                 </div>
-                <div class="option"></div>
-                <div class="option"></div>
+                <div class="option bife-cavalo">
+                    <img src="https://www.sabornamesa.com.br/media/k2/items/cache/8d00d7ae4f3b1af3be8d6d077cf2f6c4_XL.jpg">
+                    <h1>Bife a Cavalo Exec</h1>
+                    <p>Batata, salada e bife a cavalo</p>
+                    <h2>R$ 16,90</h2>
+                </div>
+                <div class="option feijoada">
+                    <img src="http://www.saboresajinomoto.com.br/uploads/images/recipes/feijoada-1.jpg">
+                    <h1>Feijoada Exec</h1>
+                    <p>Prato executivo de feijoada</p>
+                    <h2>R$ 18,90</h2>
+                </div>
             </div>
         </div>
-        <div class="menu">
+        <div class="menu drinks">
             <div class="menu-title righteous">Agora, sua bebida</div>
             <div class="options-bar">
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
+                <div class="option coke">
+                    <img src="https://redemachado.com.br/arquivos/123843.jpg">
+                    <h1>Coquinha Gelada</h1>
+                    <p>Lata 350ml</p>
+                    <h2>R$ 3,50</h2>
+                </div>
+                <div class="option juice">
+                    <img src="https://riomarkennedyonline.com.br/riomarkennedyonline/2020/06/suco_de_laranja_kina_do_feij%C3%A3o_verde_riomar_kennedy-1.jpg">
+                    <h1>Suco de Laranja</h1>
+                    <p>Copo de 400ml</p>
+                    <h2>R$ 6,00</h2>
+                </div>
+                <div class="option sugar-cane">
+                    <img src="https://staticr1.blastingcdn.com/media/photogallery/2014/10/6/300x132/b_1200x630x75/saboroso-caldo-de-cana-ou-garapa-fonte-jadiberita_84637.jpg">
+                    <h1>Caldo de Cana</h1>
+                    <p>Copo de 500ml</p>
+                    <h2>R$ 8,00</h2>
+                </div>
+                <div class="option energy">
+                    <img src="https://aogosto.com.br/delivery/wp-content/uploads/2021/08/redbull.jpg">
+                    <h1>Energético RedBull</h1>
+                    <p>Lata de 250ml</p>
+                    <h2>R$ 8,00</h2>
+                </div>
             </div>
         </div>
-        <div class="menu">
+        <div class="menu dessert">
             <div class="menu-title righteous">Por fim, sua sobremesa</div>
             <div class="options-bar">
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
-                <div class="option"></div>
+                <div class="option gateau">
+                    <img src="https://images.aws.nestle.recipes/resized/8477f8c3784cfb716aa3ce8779fdb016_petit-gateau-moca_-sorvete-receitas-nestle_1200_600.jpg">
+                    <h1>Petit Gateau</h1>
+                    <p>Bolo de Chocolate com Sorvete de Baunilha</p>
+                    <h2>R$ 12,00</h2>
+                </div>
+                <div class="option pudim">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_A2Dlzed-cDd7rjAbHNEZocmtdDJYVgVIRw&usqp=CAU">
+                    <h1>Pudim de Leite</h1>
+                    <p>Pedaço de Pudim de Leite 200g</p>
+                    <h2>R$ 4,50</h2>
+                </div>
+                <div class="option mousse">
+                    <img src="https://akdelicatessen.com.br/wp-content/uploads/2022/02/cropped-mousse-sem-gelatina-1200x675.jpg">
+                    <h1>Mousse de Maracujá</h1>
+                    <p>Pote de Mousse de Maracujá 400g</p>
+                    <h2>R$ 9,90</h2>
+                </div>
+                <div class="option acai">
+                    <img src="https://s.cornershopapp.com/product-images/2978812.png?versionId=9Z45UWtxNfj8UV.773GHa5Y9h6ickjiq">
+                    <h1>Copo de Açai</h1>
+                    <p>Copo de Açai de 400ml</p>
+                    <h2>R$ 12,00</h2>
+                </div>
             </div>
         </div>
     </div>
+
+
     <div class="bottom-menu">
         <button class="orderButton" type="button">Selecione os 3 itens para fechar o pedido</button>
     </div>
+
+
+    <div class="confirm-menu hidden">
+        <h1>Confirme seu pedido</h1>
+        <div class="dish-selected">
+            <p class="dish"></p>
+            <p class="price"></p>
+        </div>
+        <div class="drink-selected">
+            <p class="drink"></p>
+            <p class="price"></p>
+        </div>
+        <div class="dessert-selected">
+            <p class="dessert"></p>
+            <p class="price"></p>
+        </div>
+        <div>
+            <p class="total">TOTAL</p>
+            <p class="total-price"></p>
+        </div>
+        <button class="confirmButton" type="button">Tudo certo, pode pedir!</button>
+        <button class="cancelButton" type="button">Cancelar</button>
+    </div>
+
+
     <script src="index.js"></script>
 </body>
 </html>
