@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/*!Fonts*/
+.righteous{
+    font-family: 'Righteous', cursive;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+}
+/*!End of Fonts*/
+
+
+body{
+    width: 100%;
+    background-color: #E5E5E5;
+}
+
+
+/*!Header*/
+.header{
+    width: calc(100% - 21px);
+    height: 92px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #CF2B2B;
+    color: white;
+    padding-left: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header > :first-child{
+    font-size: 44px;
+}
+.header > :nth-child(2){
+    font-size: 18px;
+}
+/*!End of Header*/
+
+
+/*!Feed*/
+.feed{
+    margin-top: 92px;
+    background-color: #E5E5E5;
+    width: calc(100% - 19px);
+    padding-top: 0.1px;
+    padding-left: 19px;
+    height: 100%;
+    margin-bottom: 108px;
+}
+.menu{
+    margin-top: 27px;
+    height: 245px;
+    width: 100%;
+}
+.menu-title{
+    font-size: 26px;
+    margin-bottom: 17px;
+}
+.options-bar{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 202px;
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.option{
+    width: 172px;
+    height: 216px;
+    margin-right: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+/*!End of Feed*/
+
+
+/*!Bottom Menu*/
+.bottom-menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 92px;
+    background-color: white;
+    width: 100vw;
+}
+/*!End of Bottom Menu*/
