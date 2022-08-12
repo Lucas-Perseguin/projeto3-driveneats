@@ -91,5 +91,17 @@ body{
     height: 92px;
     background-color: white;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.orderButton{
+    background: #CBCBCB;
+    border-radius: 50px;
+    width: 364px;
+    height: 61px;
+    border: none;
+    font-size: 20px;
+    color: white;
 }
 /*!End of Bottom Menu*/
