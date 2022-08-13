@@ -59,18 +59,12 @@ function selectOption(option, menu){
 function orderConfirmation(){
     const menu = document.querySelector('.confirm-menu')
     const blur = document.querySelector('.blur')
-    selectedDish = document.querySelector('.dishes .selected').querySelector('h1').innerHTML
-    const selectedDishPrice = document.querySelector('.dishes .selected').querySelector('h2').innerHTML
-    selectedDrink = document.querySelector('.drinks .selected').querySelector('h1').innerHTML
-    const selectedDrinkPrice = document.querySelector('.drinks .selected').querySelector('h2').innerHTML
-    selectedDessert = document.querySelector('.desserts .selected').querySelector('h1').innerHTML
-    const selectedDessertPrice = document.querySelector('.desserts .selected').querySelector('h2').innerHTML
-    const dish = document.querySelector('.confirm-menu .dish-selected .dish')
-    const dishPrice = document.querySelector('.confirm-menu .dish-selected .price')
-    const drink = document.querySelector('.confirm-menu .drink-selected .drink')
-    const drinkPrice = document.querySelector('.confirm-menu .drink-selected .price')
-    const dessert = document.querySelector('.confirm-menu .dessert-selected .dessert')
-    const dessertPrice = document.querySelector('.confirm-menu .dessert-selected .price')
+    selectedDish = document.querySelector('.dishes .selected')
+    selectedDrink = document.querySelector('.drinks .selected')
+    selectedDessert = document.querySelector('.desserts .selected')
+    const dish = document.querySelector('.confirm-menu .dish-selected')
+    const drink = document.querySelector('.confirm-menu .drink-selected')
+    const dessert = document.querySelector('.confirm-menu .dessert-selected')
     valueDish = Number(document.querySelector('.dishes .selected').querySelector('value').innerHTML)
     valueDrink = Number(document.querySelector('.drinks .selected').querySelector('value').innerHTML)
     valueDessert = Number(document.querySelector('.desserts .selected').querySelector('value').innerHTML)
@@ -78,12 +72,12 @@ function orderConfirmation(){
     menu.classList.remove('hidden')
     menu.classList.add('flex')
     blur.classList.remove('hidden')
-    dish.innerHTML = selectedDish
-    dishPrice.innerHTML = selectedDishPrice
-    drink.innerHTML = selectedDrink
-    drinkPrice.innerHTML = selectedDrinkPrice
-    dessert.innerHTML = selectedDessert
-    dessertPrice.innerHTML = selectedDessertPrice
+    dish.querySelector('.dish').innerHTML = selectedDish.querySelector('h1').innerHTML
+    dish.querySelector('.price').innerHTML = selectedDish.querySelector('h2').innerHTML
+    drink.querySelector('.drink').innerHTML = selectedDrink.querySelector('h1').innerHTML
+    drink.querySelector('.price').innerHTML = selectedDrink.querySelector('h2').innerHTML
+    dessert.querySelector('.dessert').innerHTML = selectedDessert.querySelector('h1').innerHTML
+    dessert.querySelector('.price').innerHTML = selectedDessert.querySelector('h2').innerHTML
     let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
     total.innerHTML = `R$ ${totalValue}`
 }
@@ -100,7 +94,7 @@ function sendOrder(){
     const name = prompt('Qual o seu nome?')
     const adress = prompt('Qaul é o seu endereço?')
     let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
-    let order = `Olá, gostaria de fazer o pedido:\n- Prato: ${selectedDish}\n- Bebida: ${selectedDrink}\n- Sobremesa: ${selectedDessert}\nTotal: R$ ${totalValue}\n\nNome: ${name}\nEndereço: ${adress}`;
+    let order = `Olá, gostaria de fazer o pedido:\n- Prato: ${selectedDish.querySelector('h1').innerHTML}\n- Bebida: ${selectedDrink.querySelector('h1').innerHTML}\n- Sobremesa: ${selectedDessert.querySelector('h1').innerHTML}\nTotal: R$ ${totalValue}\n\nNome: ${name}\nEndereço: ${adress}`;
     let finalOrder = encodeURIComponent(order)
     window.open("https://wa.me/5516981377276?text=" + finalOrder, "_blank")
 }
