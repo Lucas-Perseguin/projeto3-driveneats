@@ -9,7 +9,12 @@ function prepareButton(){
     const button = document.querySelector('.orderButton')
     button.classList.remove('inactive')
     button.classList.add('active')
+    button.classList.add('pointer')
     button.innerHTML = "Fechar Pedido"
+    const cssTemplateString = `.orderButton:hover{text-decoration: underline;text-decoration-color: white;}`;
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = cssTemplateString;
+    document.head.insertAdjacentElement('beforeend', styleTag);
 }
 
 function selectOption(option, menu){
@@ -59,7 +64,7 @@ function orderConfirmation(){
     drinkPrice.innerHTML = selectedDrinkPrice
     dessert.innerHTML = selectedDessert
     dessertPrice.innerHTML = selectedDessertPrice
-    let totalValue = valueDish + valueDrink + valueDessert
+    let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
     total.innerHTML = `R$ ${totalValue}`
 }
 
@@ -74,9 +79,8 @@ function closeMenu(){
 function sendOrder(){
     const name = prompt('Qual o seu nome?')
     const adress = prompt('Qaul é o seu endereço?')
-    let totalValue = valueDish + valueDrink + valueDessert
+    let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
     let order = `Olá, gostaria de fazer o pedido:\n- Prato: ${selectedDish}\n- Bebida: ${selectedDrink}\n- Sobremesa: ${selectedDessert}\nTotal: R$ ${totalValue}\n\nNome: ${name}\nEndereço: ${adress}`;
     let finalOrder = encodeURIComponent(order)
-    console.log(finalOrder)
-    window.open("https://api.whatsapp.com/send?phone=5516981377276&text=" + finalOrder, "_blank")
+    window.open("https://wa.me/5516981377276?text=" + finalOrder, "_blank")
 }
