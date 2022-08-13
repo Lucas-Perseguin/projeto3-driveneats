@@ -11,15 +11,35 @@ function prepareButton(){
     button.classList.add('active')
     button.classList.add('pointer')
     button.innerHTML = "Fechar Pedido"
-    const cssTemplateString = `.orderButton:hover{text-decoration: underline;text-decoration-color: white;}`;
-    const styleTag = document.createElement("style");
-    styleTag.innerHTML = cssTemplateString;
-    document.head.insertAdjacentElement('beforeend', styleTag);
+    const existingStyleTag = document.head.querySelector('style')
+    if (existingStyleTag === null){
+        const cssTemplateString = `.orderButton:hover{text-decoration: underline;text-decoration-color: white;}`;
+        const styleTag = document.createElement("style");
+        styleTag.innerHTML = cssTemplateString;
+        document.head.insertAdjacentElement('beforeend', styleTag);
+    }
+}
+
+function unprepareButton(){
+    const button = document.querySelector('.orderButton')
+    button.classList.remove('active')
+    button.classList.add('inactive')
+    button.classList.remove('pointer')
+    button.innerHTML = "Selecione os 3 itens para fechar o pedido"
+    const styleTag = document.head.querySelector('style')
+    styleTag.remove()
 }
 
 function selectOption(option, menu){
     const selected = document.querySelector(`${menu} .selected`)
     if (selected !== null){
+        if (selected === option){
+            const selectedCheckmark = selected.querySelector('.checkmark')
+            selected.classList.remove('selected')
+            selectedCheckmark.classList.add('hidden')
+            unprepareButton()
+            return 0;
+        }
         const selectedCheckmark = selected.querySelector('.checkmark')
         selected.classList.remove('selected')
         selectedCheckmark.classList.add('hidden')
