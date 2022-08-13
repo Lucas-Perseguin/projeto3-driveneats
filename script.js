@@ -57,29 +57,32 @@ function selectOption(option, menu){
 }
 
 function orderConfirmation(){
-    const menu = document.querySelector('.confirm-menu')
-    const blur = document.querySelector('.blur')
-    selectedDish = document.querySelector('.dishes .selected')
-    selectedDrink = document.querySelector('.drinks .selected')
-    selectedDessert = document.querySelector('.desserts .selected')
-    const dish = document.querySelector('.confirm-menu .dish-selected')
-    const drink = document.querySelector('.confirm-menu .drink-selected')
-    const dessert = document.querySelector('.confirm-menu .dessert-selected')
-    valueDish = Number(document.querySelector('.dishes .selected').querySelector('value').innerHTML)
-    valueDrink = Number(document.querySelector('.drinks .selected').querySelector('value').innerHTML)
-    valueDessert = Number(document.querySelector('.desserts .selected').querySelector('value').innerHTML)
-    const total = document.querySelector('.total-price')
-    menu.classList.remove('hidden')
-    menu.classList.add('flex')
-    blur.classList.remove('hidden')
-    dish.querySelector('.dish').innerHTML = selectedDish.querySelector('h1').innerHTML
-    dish.querySelector('.price').innerHTML = selectedDish.querySelector('h2').innerHTML
-    drink.querySelector('.drink').innerHTML = selectedDrink.querySelector('h1').innerHTML
-    drink.querySelector('.price').innerHTML = selectedDrink.querySelector('h2').innerHTML
-    dessert.querySelector('.dessert').innerHTML = selectedDessert.querySelector('h1').innerHTML
-    dessert.querySelector('.price').innerHTML = selectedDessert.querySelector('h2').innerHTML
-    let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
-    total.innerHTML = `R$ ${totalValue}`
+    const active = document.querySelector('.active')
+    if (active !== null){
+        const menu = document.querySelector('.confirm-menu')
+        const blur = document.querySelector('.blur')
+        selectedDish = document.querySelector('.dishes .selected')
+        selectedDrink = document.querySelector('.drinks .selected')
+        selectedDessert = document.querySelector('.desserts .selected')
+        const dish = document.querySelector('.confirm-menu .dish-selected')
+        const drink = document.querySelector('.confirm-menu .drink-selected')
+        const dessert = document.querySelector('.confirm-menu .dessert-selected')
+        valueDish = Number(document.querySelector('.dishes .selected').querySelector('value').innerHTML)
+        valueDrink = Number(document.querySelector('.drinks .selected').querySelector('value').innerHTML)
+        valueDessert = Number(document.querySelector('.desserts .selected').querySelector('value').innerHTML)
+        const total = document.querySelector('.total-price')
+        menu.classList.remove('hidden')
+        menu.classList.add('flex')
+        blur.classList.remove('hidden')
+        dish.querySelector('.dish').innerHTML = selectedDish.querySelector('h1').innerHTML
+        dish.querySelector('.price').innerHTML = selectedDish.querySelector('h2').innerHTML
+        drink.querySelector('.drink').innerHTML = selectedDrink.querySelector('h1').innerHTML
+        drink.querySelector('.price').innerHTML = selectedDrink.querySelector('h2').innerHTML
+        dessert.querySelector('.dessert').innerHTML = selectedDessert.querySelector('h1').innerHTML
+        dessert.querySelector('.price').innerHTML = selectedDessert.querySelector('h2').innerHTML
+        let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
+        total.innerHTML = `R$ ${totalValue}`
+    }
 }
 
 function closeMenu(){
