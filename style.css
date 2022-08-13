@@ -35,6 +35,12 @@ body{
     left: 0;
     top: 92px;
 }
+.active{
+    background: #32B72F;
+}
+.inactive{
+    background: #CBCBCB;
+}
 
 
 
@@ -150,7 +156,6 @@ img{
     z-index: 3;
 }
 .orderButton{
-    background: #CBCBCB;
     border-radius: 50px;
     width: 364px;
     height: 61px;
@@ -165,7 +170,6 @@ img{
 .confirm-menu{
     position: fixed;
     width: 377px;
-    height: 370px;
     left: calc((100% - 377px)/2);
     top: calc(50% - 370px/2);
     background: #50d074;
