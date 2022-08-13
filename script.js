@@ -91,10 +91,15 @@ function closeMenu(){
 }
 
 function sendOrder(){
-    const name = prompt('Qual o seu nome?')
-    const adress = prompt('Qaul é o seu endereço?')
-    let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
-    let order = `Olá, gostaria de fazer o pedido:\n- Prato: ${selectedDish.querySelector('h1').innerHTML}\n- Bebida: ${selectedDrink.querySelector('h1').innerHTML}\n- Sobremesa: ${selectedDessert.querySelector('h1').innerHTML}\nTotal: R$ ${totalValue}\n\nNome: ${name}\nEndereço: ${adress}`;
-    let finalOrder = encodeURIComponent(order)
-    window.open("https://wa.me/5516981377276?text=" + finalOrder, "_blank")
+    const name = document.querySelector('.name-field').value
+    const adress = document.querySelector('.adress-field').value
+    if (name !== "" && adress !== ""){
+        let totalValue = (valueDish + valueDrink + valueDessert).toFixed(2)
+        let order = `Olá, gostaria de fazer o pedido:\n- Prato: ${selectedDish.querySelector('h1').innerHTML}\n- Bebida: ${selectedDrink.querySelector('h1').innerHTML}\n- Sobremesa: ${selectedDessert.querySelector('h1').innerHTML}\nTotal: R$ ${totalValue}\n\nNome: ${name}\nEndereço: ${adress}`;
+        let finalOrder = encodeURIComponent(order)
+        window.open("https://wa.me/5516981377276?text=" + finalOrder, "_blank")
+    }
+    else{
+        alert('Por favor insira um nome e um endereço para a entrega')
+    }
 }
